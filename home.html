@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Life Investments - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('https://img.wapka.io/00emv9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .investment-plan {
+            margin: 20px auto;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .investment-plan img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .investment-plan h2 {
+            margin: 10px 0;
+        }
+        .investment-plan p {
+            margin: 10px 0;
+        }
+        .investment-plan button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .investment-plan button:hover {
+            background-color: #218838;
+        }
+        .custom-investment {
+            margin: 20px auto;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .custom-investment input {
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+            border-radius: 5px;
+            border: none;=
+            margin-bottom: 10px;
+        }
+        .custom-investment button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .custom-investment button:hover {
+            background-color: #0056b3;
+        }
+        .calculation {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.wapka.io/00emv8.jpg" alt="Soft Life Investments Logo" class="logo">
+        <h1>Soft Life Investments</h1>
+
+        <!-- Investment Plans -->
+        <div class="investment-plans">
+            <!-- Plan 1 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhh.jpg" alt="Investment Plan 1">
+                <h2>Invest K10</h2>
+                <p>Receive K2 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhi.png" alt="Investment Plan 2">
+                <h2>Invest K20</h2>
+                <p>Receive K4 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhj.jpg" alt="Investment Plan 3">
+                <h2>Invest K50</h2>
+                <p>Receive K10 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+
+            <!-- Plan 4 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhk.jpg" alt="Investment Plan 4">
+                <h2>Invest K100</h2>
+                <p>Receive K20 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+
+            <!-- Plan 5 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhm.jpg" alt="Investment Plan 5">
+                <h2>Invest K500</h2>
+                <p>Receive K100 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+
+            <!-- Plan 6 -->
+            <div class="investment-plan">
+                <img src="https://img.wapka.io/00emhl.jpg" alt="Investment Plan 6">
+                <h2>Invest K1000</h2>
+                <p>Receive K200 every day for the next 14 days.</p>
+                <button onclick="location.href='invest.html'">Invest Now</button>
+            </div>
+        </div>
+
+        <!-- Custom Investment -->
+        <div class="custom-investment">
+            <h2>Custom Investment Plan</h2>
+            <input type="number" id="customAmount" placeholder="Enter amount (e.g., K150)" min="10">
+            <div class="calculation">
+                <p>Daily Return: <span id="dailyReturn">K0.00</span></p>
+            </div>
+            <button onclick="calculateReturn()">Calculate & Invest</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateReturn() {
+            const amount = parseFloat(document.getElementById('customAmount').value);
+            let dailyReturn = 0;
+
+            if (amount >= 10 && amount <= 1000) {
+                dailyReturn = (amount * 2.8 / 14).toFixed(2); // Example calculation
+                document.getElementById('dailyReturn').innerText = `K${dailyReturn}`;
+            } else {
+                document.getElementById('dailyReturn').innerText = 'Invalid amount';
+            }
+        }
+    </script>
+</body>
+</html>
